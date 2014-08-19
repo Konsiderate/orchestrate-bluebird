@@ -26,7 +26,7 @@
     "name": "Steve Kaliski"
   },
   "version": "0.3.4",
-  "main": "index",
+  "main": "lib/index",
   "tags": [
     "orchestrate",
     "driver"
