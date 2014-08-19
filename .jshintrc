@@ -1,4 +1,4 @@
 {
-  node: true,
-  asi: true
+  "node": true,
+  "asi": true
 }
