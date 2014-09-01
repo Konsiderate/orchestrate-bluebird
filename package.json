@@ -14,18 +14,18 @@
     "time-series"
   ],
   "homepage": "http://orchestrate.io/docs/api",
-  "repository": "orchestrate-io/orchestrate.js",
+  "repository": "Konsiderate/orchestrate-bluebird",
   "bugs": {
     "url": "https://github.com/orchestrate-io/orchestrate.js/issues",
     "email": "support@orchestrate.io"
   },
   "license": "Apache-2.0",
   "author": {
-    "email": "steve@bowery.io",
-    "url": "http://stevekaliski.com",
-    "name": "Steve Kaliski"
+    "email": "matt@konsiderate.com",
+    "url": "http://konsiderate.com",
+    "name": "Matthew McLaughlin"
   },
-  "version": "0.3.4",
+  "version": "0.0.1",
   "main": "lib/index",
   "tags": [
     "orchestrate",
