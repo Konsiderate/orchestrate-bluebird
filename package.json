@@ -1,5 +1,5 @@
 {
-  "name": "orchestrate",
+  "name": "orchestrate-bluebird",
   "description": "Orchestrate is a database service. It is a simple REST API that is optimized for queries. Orchestrate combines full-text search, graph, time-series, and key/value.",
   "keywords": [
     "full-text search",
@@ -25,7 +25,7 @@
     "url": "http://konsiderate.com",
     "name": "Matthew McLaughlin"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index",
   "tags": [
     "orchestrate",
