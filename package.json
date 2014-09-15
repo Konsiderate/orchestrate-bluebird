@@ -13,11 +13,11 @@
     "events",
     "time-series"
   ],
-  "homepage": "http://orchestrate.io/docs/api",
+  "homepage": "https://github.com/Konsiderate/orchestrate-bluebird",
   "repository": "Konsiderate/orchestrate-bluebird",
   "bugs": {
-    "url": "https://github.com/orchestrate-io/orchestrate.js/issues",
-    "email": "support@orchestrate.io"
+    "url": "https://github.com/Konsiderate/orchestrate-bluebird/issues",
+    "email": "support@konsiderate.com"
   },
   "license": "Apache-2.0",
   "author": {
@@ -25,11 +25,12 @@
     "url": "http://konsiderate.com",
     "name": "Matthew McLaughlin"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "lib/index",
   "tags": [
     "orchestrate",
-    "driver"
+    "driver",
+    "nosql"
   ],
   "dependencies": {
     "bluebird": "^2.2.2",
