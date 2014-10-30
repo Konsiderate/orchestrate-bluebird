@@ -35,7 +35,7 @@
   "dependencies": {
     "bluebird": "^2.2.2",
     "parse-link-header": "~0.1.0",
-    "request": "~2.40.0",
+    "request": "~2.40.0"
   },
   "devDependencies": {
     "coveralls": "^2.11.0",
