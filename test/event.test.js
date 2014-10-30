@@ -7,7 +7,7 @@
 // Module Dependencies.
 var assert = require('assert')
 var nock = require('nock')
-var token = 'sample_token'
+var token = require('./creds').token
 var db = require('../lib-cov/client')(token)
 
 var list = {
@@ -18,7 +18,7 @@ var list = {
         "key": "sjkaliski@gmail.com",
         "type": "update",
         "timestamp": 1369832019085,
-        "ordinal": 9,
+        "ordinal_str": "9",
         "ref": "ae3dfa4325abe21e"
       },
       "value": {
@@ -33,7 +33,7 @@ var list = {
         "key": "sjkaliski@gmail.com",
         "type": "update",
         "timestamp": 1369832019080,
-        "ordinal": 7,
+        "ordinal_str": "7",
         "ref": "f8a86a25029a907b"
       },
       "value": {
@@ -78,7 +78,7 @@ suite('Event', function () {
     db.newEventReader()
     .from('users', 'sjkaliski@gmail.com')
     .time(1369832019085)
-    .ordinal(9)
+    .ordinal('9')
     .type('update')
     .get()
     .then(function (res) {

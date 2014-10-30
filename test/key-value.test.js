@@ -7,7 +7,7 @@
 // Module Dependencies.
 var assert = require('assert')
 var nock = require('nock')
-var token = 'sample_token'
+var token = require('./creds').token
 var db = require('../lib-cov/client')(token)
 
 // Mock data.

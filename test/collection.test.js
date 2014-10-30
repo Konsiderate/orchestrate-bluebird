@@ -7,7 +7,7 @@
 // Module Dependencies.
 var assert = require('assert')
 var nock = require('nock')
-var token = 'sample_token'
+var token = require('./creds').token
 var db = require('../lib-cov/client')(token)
 
 var users = {
@@ -22,7 +22,7 @@ var users = {
 
 // Override http requests.
 var fakeOrchestrate = nock('https://api.orchestrate.io/')
-  .get('/v0/users?query=new%20york')
+  .get('/v0/users?sort=value.name%3Aasc&query=new%20york')
   .reply(200, {
     "results": [
       {
@@ -51,12 +51,15 @@ var fakeOrchestrate = nock('https://api.orchestrate.io/')
 
 suite('Collection', function () {
   test('Get value by query', function (done) {
-    db.search('users', 'new york')
+    db.search('users', 'new york', {
+      sort: 'value.name:asc'
+    })
     .then(function (res) {
       assert.equal(200, res.statusCode)
       assert.deepEqual(res.body.results[0].value, users.steve)
       done()
     })
+    .fail(done)
   })
 
   test('Delete collection', function (done) {

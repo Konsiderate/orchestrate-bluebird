@@ -25,7 +25,7 @@
     "url": "http://konsiderate.com",
     "name": "Matthew McLaughlin"
   },
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "lib/index",
   "tags": [
     "orchestrate",
@@ -35,15 +35,15 @@
   "dependencies": {
     "bluebird": "^2.2.2",
     "parse-link-header": "~0.1.0",
-    "request": "~2.27.0"
+    "request": "~2.40.0",
   },
   "devDependencies": {
     "coveralls": "^2.11.0",
     "expect.js": "0.1.x",
     "jscoverage": "^0.5.4",
-    "mocha": "*",
+    "mocha": "^1.21.4",
     "mocha-lcov-reporter": "0.0.1",
-    "nock": "^0.42.3"
+    "nock": "^0.45.0"
   },
   "scripts": {
     "test": "npm run cov && ./node_modules/.bin/mocha -u tdd",

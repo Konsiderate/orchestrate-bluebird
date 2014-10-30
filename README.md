@@ -189,10 +189,14 @@ db.deleteCollection('users')
 
 ## Search
 
-To run a quick search, you can simply provide the collection you'd like to search within, and your query. Orchestrate supports any type of query including lucene queries.
+To run a quick search, you can simply provide the collection you'd like to search within, your query, and optionally, any query parameters like a `list` or `sort` argument. Currently, Orchestrate supports the [Lucene query syntax](http://lucene.apache.org/core/2_9_4/queryparsersyntax.html).
 
 ```javascript
-db.search('collection', 'query')
+db.search('collection', 'query', { 
+  sort: 'value.sort:desc',
+  limit: 5,
+  offset: 2
+})
 .then(function (result) {
 
 })
@@ -201,15 +205,19 @@ db.search('collection', 'query')
 })
 ```
 
-If you want to include a limit or offset, the more verbose `SearchBuilder` is available:
+The more verbose `SearchBuilder` is also available for a more stately approach:
 
 ```javascript
 db.newSearchBuilder()
 .collection('users')
 .limit(100)
 .offset(10)
+.sort('name', 'desc')
+.sort('age', 'asc')
 .query('steve')
 ```
+
+For more information about Orchestrate search, [read the docs](http://orchestrate.io/docs/apiref#search).
 
 ## Graphs
 An awesome feature Orchestrate includes is the ability to generate graphs between collections. For example, consider the collections `users` and `movies`. Some user Steve will `like` a variety of movies. We can generate this relationship:
@@ -238,6 +246,16 @@ db.newGraphReader()
 .related('friends', 'likes')
 ```
 This will return all of the things that friends of Steve have liked. This assumes a friend relation has previously been defined between Steve and another user.
+
+Orchestrate supports offsets and limits for graph relationships as well. To set those values:
+```javascript
+db.newGraphReader()
+.get()
+.limit(1)
+.offset(1)
+.from('users', 'Steve')
+.related('friends', 'likes')
+```
 
 If we want to delete a graph relationship:
 ```javascript
