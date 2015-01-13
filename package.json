@@ -33,7 +33,7 @@
     "nosql"
   ],
   "dependencies": {
-    "bluebird": "^2.2.2",
+    "bluebird": "~2.6.4",
     "parse-link-header": "~0.1.0",
     "request": "~2.40.0"
   },
